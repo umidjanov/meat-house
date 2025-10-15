@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meat House / Go'sht Do'koni</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'meat-red': '#DC2626',
+                        'meat-dark': '#991B1B',
+                        'meat-light': '#FEE2E2'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header -->
+    <header id="navbar" class="bg-meat-red text-white sticky top-0 z-50 shadow-md transition-transform duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <a href="./index.html">
+                    <img width="100px" src="logo2.png" alt="img.upload">
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-phone text-sm"></i>
+                <span class="text-sm">+998 97 442 50 40</span>
+            </div>
+        </div>
+    </header>
+    <script>
+        let lastScroll = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 50) {
+                // pastga scroll
+                navbar.style.transform = "translateY(-100%)";
+            } else {
+                // tepaga scroll
+                navbar.style.transform = "translateY(0)";
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-meat-red to-meat-dark text-white py-12 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-3">Sifatli Go'sht Do'koni</h2>
+            <p class="text-lg mb-6">Eng yangi va sifatli go'sht mahsulotlari</p>
+
+            <div class="bg-white rounded-full p-1 max-w-md mx-auto shadow-lg">
+                <div class="flex">
+                    <input id="searchInput" type="text" placeholder="Go'sht turini qidiring..."
+                        class="flex-1 px-4 py-2 rounded-l-full text-gray-700 focus:outline-none" />
+                    <button id="searchBtn"
+                        class="bg-meat-red hover:bg-meat-dark text-white px-6 py-2 rounded-r-full transition-colors">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Bizning Mahsulotlarimiz</h3>
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <p id="noResults" class="text-center text-gray-500 hidden mt-6">Afsuski bizda bunday maxsulot yo'q😔</p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="productModal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 backdrop-blur-sm transition-opacity duration-300"
+        aria-hidden="true">
+        <div class="bg-white rounded-lg shadow-lg max-w-md w-full mx-4 animate-fade-in">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modalTitle" class="text-xl font-bold text-gray-800"></h3>
+                    <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <img id="modalImage" src="" alt="" class="w-full h-48 object-cover rounded-lg mb-4">
+                <div id="modalContent" class="space-y-3"></div>
+                <div class="flex gap-3 mt-6">
+                    <button id="closeModalBtn2"
+                        class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg">
+                        Orqaga
+                    </button>
+                    <button class="flex-1 bg-meat-red hover:bg-meat-dark text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-shopping-cart mr-2"></i>Buyurtma
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-meat-dark to-meat-red text-white py-10 mt-16 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')] opacity-10">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 animate-fade-up">
+            <!-- Logo -->
+            <div class="flex flex-col items-center text-center mb-6">
+                <img src="./logo2.png" alt="Meat House Logo"
+                    class="w-36 mb-3 drop-shadow-lg hover:scale-105 transition-transform duration-300">
+                <h4 class="text-2xl font-bold tracking-wide">Go'sht House</h4>
+                <p class="text-gray-200 mt-1">Sifatli va yangi go'sht mahsulotlari har kuni siz uchun</p>
+            </div>
+
+            <!-- Links -->
+            <div class="flex flex-wrap justify-center gap-8 text-gray-200 mb-6">
+                <a href="#" class="hover:text-white transition-colors">Bosh sahifa</a>
+                <a href="#" class="hover:text-white transition-colors">Mahsulotlar</a>
+                <a href="./about.html" class="hover:text-white transition-colors">Biz haqimizda</a>
+                <a href="tel:+998974425040"
+                    class="hover:text-white transition-colors px-[10px] py-[5px] bg-[#3e25219d] rounded-lg shadow-lg shadow-[#979191b8] animate-pulse">
+                    <i class="fas fa-phone mr-2 text-white"></i>
+                    Biz bilan bog‘lanish
+                </a>
+            </div>
+
+            <!-- Contacts -->
+            <div class="flex flex-col items-center gap-2 text-gray-300">
+                <p><i class="fas fa-map-marker-alt mr-2 text-white"></i>Toshkent, Istirohat mahallasi 23A</p>
+                <p><i class="fas fa-clock mr-2 text-white"></i>Har kuni: 8:00 - 22:00</p>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex justify-center gap-5 mt-6">
+                <a href="https://t.me/islomqassob"
+                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-telegram text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/xakimjonovi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/xakimjonovi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
+            </div>
+
+            <div class="border-t border-white/20 mt-8 pt-4 text-center text-sm text-gray-300">
+                © 2025 <span class="font-semibold text-white">Go'sht House</span>. Barcha huquqlar himoyalangan.
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fade-up 0.8s ease-out;
+        }
+    </style>
+
+
+    <script>
+        const products = [
+            { id: 1, name: "Tovuq Go'shti", category: "tovuq", price: "25,000", image: "media/tovuq goshti.jpg", description: "Yangi tovuq go'shti", details: { weight: "1 kg", origin: "Mahalliy ferma", storage: "Muzlatgichda saqlang", benefits: "Protein va vitaminlarga boy" } },
+            { id: 2, name: "Qoy Go'shti", category: "qoy", price: "85,000", image: "media/qoy lahim.jpg", description: "Sifatli qoy go'shti", details: { weight: "1 kg", origin: "Tog' qo'ylari", storage: "Muzlatgichda saqlang", benefits: "B12 vitamin va temirga boy" } },
+            { id: 3, name: "Mol Go'shti", category: "mol", price: "70,000", image: "media/mol goshti.jpg", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } },
+        ];
+
+        const grid = document.getElementById("productsGrid");
+        const noResults = document.getElementById("noResults");
+        const modal = document.getElementById("productModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalImage = document.getElementById("modalImage");
+        const modalContent = document.getElementById("modalContent");
+
+        function renderProducts(list) {
+            grid.innerHTML = "";
+            if (!list.length) {
+                noResults.classList.remove("hidden");
+                return;
+            }
+            noResults.classList.add("hidden");
+            list.forEach(p => {
+                const card = document.createElement("div");
+                card.className = "bg-white rounded-lg shadow hover:shadow-lg transition p-4";
+                card.innerHTML = `
+          <img src="${p.image}" alt="${p.name}" class="w-full h-[260px] object-cover rounded-md mb-3">
+          <h4 class="font-bold text-lg text-gray-800">${p.name}</h4>
+          <p class="text-gray-600 text-sm mb-3">${p.description}</p>
+          <div class="flex justify-between items-center">
+            <span class="text-meat-red font-bold">${p.price} so'm</span>
+            <button class="bg-meat-red hover:bg-meat-dark text-white px-3 py-1 rounded" data-id="${p.id}">
+              <i class="fas fa-eye mr-1"></i>Ko'rish
+            </button>
+          </div>
+        `;
+                grid.appendChild(card);
+            });
+        }
+
+        renderProducts(products);
+
+        // Search
+        document.getElementById("searchBtn").addEventListener("click", search);
+        document.getElementById("searchInput").addEventListener("keypress", e => e.key === "Enter" && search());
+
+        function search() {
+            const input = document.getElementById("searchInput").value.trim().toLowerCase();
+
+            // Agar input bo‘sh bo‘lsa — barcha mahsulotlarni qayta chiqarsin
+            if (input === "") {
+                renderProducts(products);
+                return;
+            }
+
+            // Faqat name bo‘yicha qidirish
+            const filtered = products.filter(p =>
+                p.name.toLowerCase().includes(input)
+            );
+
+            renderProducts(filtered);
+        }
+
+
+        // Modal
+        grid.addEventListener("click", e => {
+            const id = e.target.closest("button")?.dataset.id;
+            if (!id) return;
+            const p = products.find(x => x.id == id);
+            openModal(p);
+        });
+
+        function openModal(p) {
+            modalTitle.textContent = p.name;
+            modalImage.src = p.image;
+            modalContent.innerHTML = `
+        <p>${p.description}</p>
+        <div class="bg-gray-50 p-3 rounded-lg">
+          <h5 class="font-semibold mb-2">Mahsulot haqida:</h5>
+          <p><b>Og'irligi:</b> ${p.details.weight}</p>
+          <p><b>Kelib chiqishi:</b> ${p.details.origin}</p>
+          <p><b>Saqlash:</b> ${p.details.storage}</p>
+          <p><b>Foydali xususiyatlari:</b> ${p.details.benefits}</p>
+        </div>
+        <div class="text-center mt-3">
+          <span class="text-2xl font-bold text-meat-red">${p.price} so'm</span>
+        </div>`;
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        }
+
+        document.querySelectorAll("#closeModalBtn, #closeModalBtn2").forEach(btn =>
+            btn.addEventListener("click", closeModal)
+        );
+
+        modal.addEventListener("click", e => e.target === modal && closeModal());
+
+        function closeModal() {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        }
+    </script>
+
+    <style>
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.25s ease-out;
+        }
+    </style>
+</body>
+
+</html>
