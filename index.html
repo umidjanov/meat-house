@@ -188,10 +188,11 @@
 
     <script>
         const products = [
-            { id: 1, name: "Tovuq Go'shti", category: "tovuq", price: "25,000", image: "media/tovuq goshti.jpg", description: "Yangi tovuq go'shti", details: { weight: "1 kg", origin: "Mahalliy ferma", storage: "Muzlatgichda saqlang", benefits: "Protein va vitaminlarga boy" } },
-            { id: 2, name: "Qoy Go'shti", category: "qoy", price: "85,000", image: "media/qoy lahim.jpg", description: "Sifatli qoy go'shti", details: { weight: "1 kg", origin: "Tog' qo'ylari", storage: "Muzlatgichda saqlang", benefits: "B12 vitamin va temirga boy" } },
-            { id: 3, name: "Mol Go'shti", category: "mol", price: "70,000", image: "media/mol goshti.jpg", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } },
-            { id: 3, name: "Dudlangan baliq", category: "mol", price: "70,000", image: "media/kapchoni.jpg", description: "Sifatli dudlangan baliq", details: { weight: "1200gram", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "A, B, D, E vitaminlariga boy" } },
+            { id: 1, name: "Tovuq Go'shti", category: "tovuq", price: "25,000", image: "media/tovuq goshti.avif", description: "Yangi tovuq go'shti", details: { weight: "1 kg", origin: "Mahalliy ferma", storage: "Muzlatgichda saqlang", benefits: "Protein va vitaminlarga boy" } },
+            { id: 2, name: "Qoy Go'shti", category: "qoy", price: "85,000", image: "media/qoy lahim.avif", description: "Sifatli qoy go'shti", details: { weight: "1 kg", origin: "Tog' qo'ylari", storage: "Muzlatgichda saqlang", benefits: "B12 vitamin va temirga boy" } },
+            { id: 3, name: "Mol Go'shti", category: "mol", price: "70,000", image: "media/mol goshti.avif", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } },
+            { id: 4, name: "Dudlangan baliq", category: "baliq", price: "90,000", image: "media/kapchoni.avif", description: "Sifatli dudlangan baliq", details: { weight: "1200gram", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "A, B, D, E vitaminlariga boy" } },
+            { id: 5, name: "Mol go'shti lahim", category: "mol", price: "100,000", image: "media/lahim.avif", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } },
         ];
 
         const grid = document.getElementById("productsGrid");
@@ -262,7 +263,7 @@
             modalTitle.textContent = p.name;
             modalImage.src = p.image;
             modalContent.innerHTML = `
-        <p>${p.description}</p>
+            <p>${p.description}</p>
         <div class="bg-gray-50 p-3 rounded-lg">
           <h5 class="font-semibold mb-2">Mahsulot haqida:</h5>
           <p><b>Og'irligi:</b> ${p.details.weight}</p>
