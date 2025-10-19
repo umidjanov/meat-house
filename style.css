@@ -1,26 +1,26 @@
 #map {
-    border-radius: 10px;
-    width: 400px;
-    height: 280px;
-    box-shadow: 0 8px 15px rgba(75, 75, 75, 0.319);
+  border-radius: 10px;
+  width: 400px;
+  height: 280px;
+  box-shadow: 0 8px 15px rgba(75, 75, 75, 0.319);
 }
 
-.lokatsa{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
+.lokatsa {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .loc {
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-    font-size: 30px;
-    font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.locItem{
-    padding-right: 16px;
-    padding-left: 16px;
-    font-weight: 600;
+.locItem {
+  padding-right: 16px;
+  padding-left: 16px;
+  font-weight: 600;
 }

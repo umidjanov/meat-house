@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lan="uz">
 
 <head>
     <meta charset="UTF-8">
@@ -41,6 +41,10 @@
                     +998 97 442 50 40
                 </a>
             </div>
+            <div class="flex gap-2">
+                <button onclick="setLang('uz')" class="px-2 py-1 bg-white/20 rounded hover:bg-white/30">UZ</button>
+                <button onclick="setLang('ru')" class="px-2 py-1 bg-white/20 rounded hover:bg-white/30">RU</button>
+            </div>
         </div>
     </header>
     <script>
@@ -65,11 +69,13 @@
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-meat-red to-meat-dark text-white py-20 text-center animate-fade-slide">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-3">Biz haqimizda</h2>
-            <p class="text-lg text-white/90">2020-yildan beri mijozlarga eng sifatli go‘sht mahsulotlarini taqdim etamiz
+            <h2 class="text-4xl font-bold mb-3" data-i18n="hero_title">Biz haqimizda</h2>
+            <p class="text-lg text-white/90" data-i18n="hero_subtitle">
+                2020-yildan beri mijozlarga eng sifatli go‘sht mahsulotlarini taqdim etamiz
             </p>
         </div>
     </section>
+
 
     <style>
         @keyframes fade-slide {
@@ -96,18 +102,21 @@
             <img src="./logo.jpg" alt="Go'sht House"
                 class="rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500">
             <div>
-                <h3 class="text-3xl font-bold text-meat-dark mb-4">Go'sht House tarixi</h3>
-                <p class="mb-4 leading-relaxed text-gray-700">
+                <h3 class="text-3xl font-bold text-meat-dark mb-4" data-i18n="about_title">Go'sht House tarixi</h3>
+
+                <p class="mb-4 leading-relaxed text-gray-700" data-i18n="about_text1">
                     <b>Go'sht House</b> loyihasi <b>2020-yilda Islom tomonidan</b> tashkil etilgan bo‘lib, O‘zbekiston
-                    bo‘ylab sifatli va
-                    tabiiy go‘sht mahsulotlarini taqdim etishni maqsad qilgan.
+                    bo‘ylab
+                    sifatli va tabiiy go‘sht mahsulotlarini taqdim etishni maqsad qilgan.
                 </p>
-                <p class="mb-4 leading-relaxed text-gray-700">
+
+                <p class="mb-4 leading-relaxed text-gray-700" data-i18n="about_text2">
                     Bizning asosiy maqsadimiz — har bir mijozga yangi, xavfsiz va sog‘lom go‘sht yetkazib berishdir.
                     Bugungi kunda
                     <b>1 ta faol filial</b> orqali mijozlarga xizmat ko‘rsatamiz.
                 </p>
-                <p class="leading-relaxed text-gray-700">
+
+                <p class="leading-relaxed text-gray-700" data-i18n="about_text3">
                     Har bir mahsulotimiz sifat nazorati ostida tayyorlanadi va muzlatish tizimlarida saqlanadi. Biz
                     uchun mijoz
                     ishonchi eng muhim qadriyatdir.
@@ -118,19 +127,19 @@
 
     <!-- Order Section -->
     <section class="container mx-auto px-4 pb-16">
-        <h3 class="text-3xl font-bold text-center text-meat-dark mb-10 animate-fade-in">
+        <h3 class="text-3xl font-bold text-center text-meat-dark mb-10 animate-fade-in" data-i18n="order_title">
             Maxsulot zakaz qilish
         </h3>
 
         <form id="orderForm" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-center max-w-3xl mx-auto">
-            <input type="text" name="user_name" placeholder="Ismingiz" required
+            <input type="text" name="user_name" placeholder="Ismingiz" required data-i18n="order_name"
                 class="p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-meat-red outline-none" />
-            <input type="email" name="user_email" placeholder="Email manzilingiz" required
+            <input type="email" name="user_email" placeholder="Email manzilingiz" required data-i18n="order_email"
                 class="p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-meat-red outline-none" />
-            <input type="text" name="user_order" placeholder="Buyurtma turi" required
+            <input type="text" name="user_order" placeholder="Buyurtma turi" required data-i18n="order_type"
                 class="p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-meat-red outline-none" />
 
-            <button type="submit"
+            <button type="submit" data-i18n="order_submit"
                 class="col-span-full bg-meat-red text-white py-3 rounded-lg hover:bg-meat-dark transition shadow-lg shadow-white/50 animate-bounce">
                 Yuborish
             </button>
@@ -138,18 +147,20 @@
     </section>
 
 
-    <!-- lakatsiya -->
+
+    <!-- Location -->
     <section class="lokatsa">
-        <h1 class="loc">Bizning manzil</h1>
+        <h1 class="loc" data-i18n="location_title">Bizning manzil</h1>
         <a
             href="https://yandex.uz/maps/10335/tashkent/?ll=69.163514%2C41.323545&mode=routes&rtext=41.323611%2C69.163261~41.323642%2C69.163260&rtt=auto&ruri=ymapsbm1%3A%2F%2Forg%3Foid%3D102028777734~&z=20.53">
             <div id="map"></div>
         </a>
-        <p class="locItem">Bizning aniq manzilimiz istirohat ko'chasidan katta xalqa yo'liga chiqib ketaverishda
-            Abdulhamid hoji ota jome masjidi yonida joylashgan.</p>
-
-
+        <p class="locItem" data-i18n="location_desc">
+            Bizning aniq manzilimiz istirohat ko'chasidan katta xalqa yo'liga chiqib ketaverishda
+            Abdulhamid hoji ota jome masjidi yonida joylashgan.
+        </p>
     </section>
+
 
 
     <!-- Footer -->
@@ -163,44 +174,49 @@
                 <img src="./logo2.png" alt="Meat House Logo"
                     class="w-36 mb-3 drop-shadow-lg hover:scale-105 transition-transform duration-300">
                 <h4 class="text-2xl font-bold tracking-wide">Go'sht House</h4>
-                <p class="text-gray-200 mt-1">Sifatli va yangi go'sht mahsulotlari har kuni siz uchun</p>
+                <p class="text-gray-200 mt-1" data-i18n="footer_subtitle">Sifatli va yangi go'sht mahsulotlari har kuni
+                    siz uchun</p>
             </div>
 
             <div class="flex flex-wrap justify-center gap-8 text-gray-200 mb-6">
-                <a href="index.html" class="hover:text-white transition-colors">Bosh sahifa</a>
-                <a href="about.html" class="hover:text-white transition-colors">Biz haqimizda</a>
-                <a href="./index.html" class="hover:text-white transition-colors">Mahsulotlar</a>
+                <a href="index.html" class="hover:text-white transition-colors" data-i18n="home">Bosh sahifa</a>
+                <a href="about.html" class="hover:text-white transition-colors" data-i18n="about">Biz haqimizda</a>
+                <a href="./index.html" class="hover:text-white transition-colors" data-i18n="products">Mahsulotlar</a>
                 <a href="tel:+998974425040"
-                    class="hover:text-white transition-colors px-[10px] py-[5px] bg-[#3e25219d] rounded-lg shadow-lg shadow-[#979191b8] animate-pulse">
-                    <i class="fas fa-phone mr-2 text-white"></i>
-                    Biz bilan bog‘lanish
+                    class="hover:text-white transition-colors px-[10px] py-[5px] bg-[#3e25219d] rounded-lg shadow-lg shadow-[#979191b8] animate-pulse"
+                    data-i18n="contact_btn">
+                    <i class="fas fa-phone mr-2 text-white"></i>Biz bilan bog‘lanish
                 </a>
-
-
             </div>
 
             <div class="flex flex-col items-center gap-2 text-gray-300">
-                <p><i class="fas fa-map-marker-alt mr-2 text-white"></i>Toshkent, Istirohat mahallasi 23A</p>
-                <p><i class="fas fa-clock mr-2 text-white"></i>Ish vaqti har kuni: 8:00 - 22:00</p>
+                <p data-i18n="address"><i class="fas fa-map-marker-alt mr-2 text-white"></i>Toshkent, Istirohat
+                    mahallasi 23A</p>
+                <p data-i18n="work_time"><i class="fas fa-clock mr-2 text-white"></i>Ish vaqti har kuni: 8:00 - 22:00
+                </p>
             </div>
 
             <div class="flex justify-center gap-5 mt-6">
                 <a href="https://t.me/islomqassob"
-                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110"><i
-                        class="fab fa-telegram text-xl"></i></a>
+                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-telegram text-xl"></i>
+                </a>
                 <a href="https://www.instagram.com/xakimjonovi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110"><i
-                        class="fab fa-instagram text-xl"></i></a>
+                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
                 <a href="https://www.instagram.com/xakimjonovi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110"><i
-                        class="fab fa-facebook text-xl"></i></a>
+                    class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
             </div>
 
-            <div class="border-t border-white/20 mt-8 pt-4 text-center text-sm text-gray-300">
+            <div class="border-t border-white/20 mt-8 pt-4 text-center text-sm text-gray-300" data-i18n="rights">
                 © 2025 <span class="font-semibold text-white">Go'sht House</span>. Barcha huquqlar himoyalangan.
             </div>
         </div>
     </footer>
+
 
     <style>
         @keyframes fade-in {
@@ -238,6 +254,54 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- 🔄 Loading Overlay -->
+    <div id="loadingOverlay"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm flex flex-col items-center justify-center hidden z-[9999]">
+        <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p id="loadingText" class="text-white text-lg font-medium">Til yuklanmoqda...</p>
+    </div>
+
+    <!-- 🌍 i18n Script -->
+    <script>
+        const overlay = document.getElementById("loadingOverlay");
+        const loadingText = document.getElementById("loadingText");
+        let lang = localStorage.getItem("lang") || "uz";
+
+        function loadLang() {
+            overlay.classList.remove("hidden");
+            loadingText.textContent =
+                lang === "ru" ? "Загрузка языка..." : "Til yuklanmoqda...";
+            fetch(`./lang/${lang}.json`)
+                .then((res) => res.json())
+                .then((data) => {
+                    document.querySelectorAll("[data-i18n]").forEach((el) => {
+                        const key = el.getAttribute("data-i18n");
+                        if (data[key]) {
+                            if (el.tagName === "INPUT") el.placeholder = data[key];
+                            else el.textContent = data[key];
+                        }
+                    });
+                    setTimeout(() => {
+                        loadingText.textContent =
+                            lang === "ru" ? "Язык изменён" : "Til o‘zgardi";
+                        setTimeout(() => overlay.classList.add("hidden"), 1200);
+                    }, 800);
+                })
+                .catch((err) => {
+                    console.error("Tilni yuklashda xatolik:", err);
+                    overlay.classList.add("hidden");
+                });
+        }
+
+        function setLang(newLang) {
+            lang = newLang;
+            localStorage.setItem("lang", newLang);
+            loadLang();
+        }
+
+        loadLang();
+    </script>
+
     <script src="./script.js"></script>
 </body>
 

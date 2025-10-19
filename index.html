@@ -32,27 +32,29 @@
                     <img width="100px" src="logo2.png" alt="img.upload">
                 </a>
             </div>
-            <div class="flex items-center gap-2">
-                <i class="fas fa-phone text-sm"></i>
-                <span class="text-sm">+998 97 442 50 40</span>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-phone text-sm"></i>
+                    <span class="text-sm">+998 97 442 50 40</span>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="setLang('uz')" class="px-2 py-1 bg-white/20 rounded hover:bg-white/30">UZ</button>
+                    <button onclick="setLang('ru')" class="px-2 py-1 bg-white/20 rounded hover:bg-white/30">RU</button>
+                </div>
             </div>
         </div>
     </header>
+
     <script>
         let lastScroll = 0;
         const navbar = document.getElementById("navbar");
-
         window.addEventListener("scroll", () => {
             const currentScroll = window.pageYOffset;
-
             if (currentScroll > lastScroll && currentScroll > 50) {
-                // pastga scroll
                 navbar.style.transform = "translateY(-100%)";
             } else {
-                // tepaga scroll
                 navbar.style.transform = "translateY(0)";
             }
-
             lastScroll = currentScroll;
         });
     </script>
@@ -60,12 +62,13 @@
     <!-- Hero -->
     <section class="bg-gradient-to-r from-meat-red to-meat-dark text-white py-12 text-center">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-3">Sifatli Go'sht Do'koni</h2>
-            <p class="text-lg mb-6">Eng yangi va sifatli go'sht mahsulotlari</p>
+            <h2 data-i18n="hero_title" class="text-3xl font-bold mb-3">Sifatli Go'sht Do'koni</h2>
+            <p data-i18n="hero_subtitle" class="text-lg mb-6">Eng yangi va sifatli go'sht mahsulotlari</p>
 
             <div class="bg-white rounded-full p-1 max-w-md mx-auto shadow-lg">
                 <div class="flex">
-                    <input id="searchInput" type="text" placeholder="Go'sht turini qidiring..."
+                    <input id="searchInput" data-i18n="search_placeholder" type="text"
+                        placeholder="Go'sht turini qidiring..."
                         class="flex-1 px-4 py-2 rounded-l-full text-gray-700 focus:outline-none" />
                     <button id="searchBtn"
                         class="bg-meat-red hover:bg-meat-dark text-white px-6 py-2 rounded-r-full transition-colors">
@@ -79,9 +82,12 @@
     <!-- Products -->
     <section class="py-10">
         <div class="container mx-auto px-4">
-            <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Bizning Mahsulotlarimiz</h3>
+            <h3 data-i18n="products_title" class="text-2xl font-bold text-center mb-8 text-gray-800">Bizning
+                Mahsulotlarimiz</h3>
             <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-            <p id="noResults" class="text-center text-gray-500 hidden mt-6">Afsuski bizda bunday maxsulot yo'q😔</p>
+            <p id="noResults" data-i18n="no_results" class="text-center text-gray-500 hidden mt-6">
+                Afsuski bizda bunday mahsulot yo'q😔
+            </p>
         </div>
     </section>
 
@@ -100,11 +106,10 @@
                 <img id="modalImage" src="" alt="" class="w-full h-48 object-cover rounded-lg mb-4">
                 <div id="modalContent" class="space-y-3"></div>
                 <div class="flex gap-3 mt-6">
-                    <button id="closeModalBtn2"
-                        class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg">
-                        Orqaga
-                    </button>
-                    <button class="flex-1 bg-meat-red hover:bg-meat-dark text-white py-2 px-4 rounded-lg">
+                    <button id="closeModalBtn2" data-i18n="back"
+                        class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg">Orqaga</button>
+                    <button data-i18n="order"
+                        class="flex-1 bg-meat-red hover:bg-meat-dark text-white py-2 px-4 rounded-lg">
                         <i class="fas fa-shopping-cart mr-2"></i>Buyurtma
                     </button>
                 </div>
@@ -119,50 +124,55 @@
         </div>
 
         <div class="container mx-auto px-4 relative z-10 animate-fade-up">
-            <!-- Logo -->
             <div class="flex flex-col items-center text-center mb-6">
                 <img src="./logo2.png" alt="Meat House Logo"
                     class="w-36 mb-3 drop-shadow-lg hover:scale-105 transition-transform duration-300">
                 <h4 class="text-2xl font-bold tracking-wide">Go'sht House</h4>
-                <p class="text-gray-200 mt-1">Sifatli va yangi go'sht mahsulotlari har kuni siz uchun</p>
+                <p data-i18n="footer_about" class="text-gray-200 mt-1">Sifatli va yangi go'sht mahsulotlari har kuni siz
+                    uchun</p>
             </div>
 
-            <!-- Links -->
             <div class="flex flex-wrap justify-center gap-8 text-gray-200 mb-6">
-                <a href="#" class="hover:text-white transition-colors">Bosh sahifa</a>
-                <a href="#" class="hover:text-white transition-colors">Mahsulotlar</a>
-                <a href="./about.html" class="hover:text-white transition-colors">Biz haqimizda</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="home">Bosh sahifa</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="products">Mahsulotlar</a>
+                <a href="./about.html" class="hover:text-white transition-colors" data-i18n="about">Biz haqimizda</a>
                 <a href="tel:+998974425040"
                     class="hover:text-white transition-colors px-[10px] py-[5px] bg-[#3e25219d] rounded-lg shadow-lg shadow-[#979191b8] animate-pulse">
                     <i class="fas fa-phone mr-2 text-white"></i>
-                    Biz bilan bog‘lanish
+                    <span data-i18n="footer_contact">Biz bilan bog‘lanish</span>
                 </a>
             </div>
 
-            <!-- Contacts -->
             <div class="flex flex-col items-center gap-2 text-gray-300">
-                <p><i class="fas fa-map-marker-alt mr-2 text-white"></i>Toshkent, Istirohat mahallasi 23A</p>
-                <p><i class="fas fa-clock mr-2 text-white"></i>Har kuni: 8:00 - 22:00</p>
+                <p data-i18n="address">
+                    <i class="fas fa-map-marker-alt mr-2 text-white"></i>
+                    Toshkent, Istirohat mahallasi 23A
+                </p>
+                <p data-i18n="work_time">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    Har kuni: 8:00 - 22:00
+                </p>
             </div>
 
-            <!-- Social Icons -->
+
             <div class="flex justify-center gap-5 mt-6">
                 <a href="https://t.me/islomqassob"
                     class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
                     <i class="fab fa-telegram text-xl"></i>
                 </a>
-                <a href="https://www.instagram.com/xakimjonovi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                <a href="https://www.instagram.com/xakimjonovi"
                     class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
                     <i class="fab fa-instagram text-xl"></i>
                 </a>
-                <a href="https://www.instagram.com/xakimjonovi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                <a href="https://facebook.com"
                     class="shadow-lg shadow-[#979191b8] animate-pulse p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110">
                     <i class="fab fa-facebook text-xl"></i>
                 </a>
             </div>
 
             <div class="border-t border-white/20 mt-8 pt-4 text-center text-sm text-gray-300">
-                © 2025 <span class="font-semibold text-white">Go'sht House</span>. Barcha huquqlar himoyalangan.
+                © 2025 <span class="font-semibold text-white">Go'sht House</span>.
+                <span data-i18n="footer_rights">Barcha huquqlar himoyalangan.</span>
             </div>
         </div>
     </footer>
@@ -183,18 +193,30 @@
         .animate-fade-up {
             animation: fade-up 0.8s ease-out;
         }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.25s ease-out;
+        }
     </style>
 
-
+    <!-- Products Script -->
     <script>
         const products = [
             { id: 1, name: "Tovuq Go'shti", category: "tovuq", price: "25,000", image: "media/tovuq goshti.avif", description: "Yangi tovuq go'shti", details: { weight: "1 kg", origin: "Mahalliy ferma", storage: "Muzlatgichda saqlang", benefits: "Protein va vitaminlarga boy" } },
             { id: 2, name: "Qoy Go'shti", category: "qoy", price: "85,000", image: "media/qoy lahim.avif", description: "Sifatli qoy go'shti", details: { weight: "1 kg", origin: "Tog' qo'ylari", storage: "Muzlatgichda saqlang", benefits: "B12 vitamin va temirga boy" } },
-            { id: 3, name: "Mol Go'shti", category: "mol", price: "70,000", image: "media/mol goshti.avif", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } },
-            { id: 4, name: "Dudlangan baliq", category: "baliq", price: "90,000", image: "media/kapchoni.avif", description: "Sifatli dudlangan baliq", details: { weight: "1200gram", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Vitamin A — ko‘rish qobiliyatini yaxshilaydi, teri va immun tizim uchun foydali." } },
-            { id: 5, name: "Mol go'shti lahim", category: "mol", price: "100,000", image: "media/lahim.avif", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } },
-            { id: 6, name: "Qo'y qo'vurgasi", category: "qoy", price: "98,000", image: "media/qovurga.avif", description: "Sifatli qo'y qo'vurgasi", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Vitamin B6 (piridoksin) — oqsil va yog‘ almashinuviga yordam beradi." } },
-            { id: 7, name: "Qo'y ichki son", category: "qoy", price: "120,000", image: "media/ichki son.avif", description: "Sifatli qo'y ichki son", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "B6 – oqsil almashinuviga yordam beradi, immunitetni kuchaytiradi." } },
+            { id: 3, name: "Mol Go'shti", category: "mol", price: "70,000", image: "media/mol goshti.avif", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } }
         ];
 
         const grid = document.getElementById("productsGrid");
@@ -223,37 +245,21 @@
             <button class="bg-meat-red hover:bg-meat-dark text-white px-3 py-1 rounded" data-id="${p.id}">
               <i class="fas fa-eye mr-1"></i>Ko'rish
             </button>
-          </div>
-        `;
+          </div>`;
                 grid.appendChild(card);
             });
         }
-
         renderProducts(products);
 
-        // Search
         document.getElementById("searchBtn").addEventListener("click", search);
         document.getElementById("searchInput").addEventListener("keypress", e => e.key === "Enter" && search());
-
         function search() {
             const input = document.getElementById("searchInput").value.trim().toLowerCase();
-
-            // Agar input bo‘sh bo‘lsa — barcha mahsulotlarni qayta chiqarsin
-            if (input === "") {
-                renderProducts(products);
-                return;
-            }
-
-            // Faqat name bo‘yicha qidirish
-            const filtered = products.filter(p =>
-                p.name.toLowerCase().includes(input)
-            );
-
+            if (input === "") return renderProducts(products);
+            const filtered = products.filter(p => p.name.toLowerCase().includes(input));
             renderProducts(filtered);
         }
 
-
-        // Modal
         grid.addEventListener("click", e => {
             const id = e.target.closest("button")?.dataset.id;
             if (!id) return;
@@ -265,7 +271,7 @@
             modalTitle.textContent = p.name;
             modalImage.src = p.image;
             modalContent.innerHTML = `
-            <p>${p.description}</p>
+        <p>${p.description}</p>
         <div class="bg-gray-50 p-3 rounded-lg">
           <h5 class="font-semibold mb-2">Mahsulot haqida:</h5>
           <p><b>Og'irligi:</b> ${p.details.weight}</p>
@@ -283,32 +289,61 @@
         document.querySelectorAll("#closeModalBtn, #closeModalBtn2").forEach(btn =>
             btn.addEventListener("click", closeModal)
         );
-
         modal.addEventListener("click", e => e.target === modal && closeModal());
-
         function closeModal() {
             modal.classList.add("hidden");
             modal.classList.remove("flex");
         }
     </script>
 
-    <style>
-        @keyframes fade-in {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
+    <!-- 🔄 Loading Overlay -->
+    <div id="loadingOverlay"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm flex flex-col items-center justify-center hidden z-[9999]">
+        <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p id="loadingText" class="text-white text-lg font-medium">Til yuklanmoqda...</p>
+    </div>
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    <!-- 🌍 i18n Script -->
+    <script>
+        const overlay = document.getElementById("loadingOverlay");
+        const loadingText = document.getElementById("loadingText");
+        let lang = localStorage.getItem("lang") || "uz";
+
+        function loadLang() {
+            overlay.classList.remove("hidden");
+            loadingText.textContent =
+                lang === "ru" ? "Загрузка языка..." : "Til yuklanmoqda...";
+            fetch(`./lang/${lang}.json`)
+                .then((res) => res.json())
+                .then((data) => {
+                    document.querySelectorAll("[data-i18n]").forEach((el) => {
+                        const key = el.getAttribute("data-i18n");
+                        if (data[key]) {
+                            if (el.tagName === "INPUT") el.placeholder = data[key];
+                            else el.textContent = data[key];
+                        }
+                    });
+                    setTimeout(() => {
+                        loadingText.textContent =
+                            lang === "ru" ? "Язык изменён" : "Til o‘zgardi";
+                        setTimeout(() => overlay.classList.add("hidden"), 1200);
+                    }, 800);
+                })
+                .catch((err) => {
+                    console.error("Tilni yuklashda xatolik:", err);
+                    overlay.classList.add("hidden");
+                });
         }
 
-        .animate-fade-in {
-            animation: fade-in 0.25s ease-out;
+        function setLang(newLang) {
+            lang = newLang;
+            localStorage.setItem("lang", newLang);
+            loadLang();
         }
-    </style>
+
+        loadLang();
+    </script>
+
 </body>
 
 </html>
