@@ -1,6 +1,6 @@
 #map {
   border-radius: 10px;
-  width: 400px;
+  width: 100vw;
   height: 280px;
   box-shadow: 0 8px 15px rgba(75, 75, 75, 0.319);
 }
