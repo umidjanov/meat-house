@@ -10,8 +10,9 @@
   "footer_contact": "Связаться с нами",
   "footer_rights": "Все права защищены.",
   "home": "Главная",
-  "products": "Продукты",
-  "about": "О нас",  "address": "Ташкент, махалля Истирохат 23A",
+  "products1": "Продукты",
+  "about": "О нас",
+  "address": "Ташкент, махалля Истирохат 23A",
   "work_time": "Каждый день: 8:00 - 22:00",
   "footer_subtitle": "Качественные и свежие мясные продукты каждый день для вас",
   "contact_btn": "Связаться с нами",
@@ -26,5 +27,46 @@
   "order_name": "Ваше имя",
   "order_email": "Ваш email",
   "order_type": "Тип заказа",
-  "order_submit": "Отправить"
+  "order_submit": "Отправить",
+  "category_beef": "Корова",
+  "category_lamb": "Баран",
+  "category_chicken": "Курица",
+  "category_horse": "Лошадь",
+  "category_lahm": "постное мясо",
+  "category_file": "Куринный филе",
+  "category_qurt": "Курт",
+
+
+  "products": {
+    "chicken": {
+      "name": "Куриное мясо",
+      "description": "Свежее куриное мясо",
+      "details": {
+        "weight": "1 кг",
+        "origin": "Местная ферма",
+        "storage": "Хранить в холодильнике",
+        "benefits": "Богато белками и витаминами"
+      }
+    },
+    "lamb": {
+      "name": "Баран",
+      "description": "Качественная баранина",
+      "details": {
+        "weight": "1 кг",
+        "origin": "Горные овцы",
+        "storage": "Хранить в холодильнике",
+        "benefits": "Богато витамином B12 и железом"
+      }
+    },
+    "beef": {
+      "name": "Корова",
+      "description": "Качественная говядина",
+      "details": {
+        "weight": "1 кг",
+        "origin": "Местное животноводство",
+        "storage": "Хранить в холодильнике",
+        "benefits": "Богато железом и белками"
+      }
+    }
+  }
 }

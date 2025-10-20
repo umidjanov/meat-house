@@ -10,7 +10,7 @@
   "footer_contact": "Biz bilan bog‘lanish",
   "footer_rights": "Barcha huquqlar himoyalangan.",
   "home": "Bosh sahifa",
-  "products": "Mahsulotlar",
+  "products1": "Mahsulotlar",
   "about": "Biz haqimizda",
   "address": "Toshkent, Istirohat mahallasi 23A",
   "work_time": "Har kuni: 8:00 - 22:00",
@@ -22,11 +22,51 @@
   "location_desc": "Bizning aniq manzilimiz Istirohat ko'chasidan katta xalqa yo'liga chiqib ketaverishda Abdulhamid hoji ota jome masjidi yonida joylashgan.",
   "about_title": "Go'sht House tarixi",
   "about_text1": "Go'sht House loyihasi 2020-yilda Islom tomonidan tashkil etilgan bo‘lib, O‘zbekiston bo‘ylab sifatli va tabiiy go‘sht mahsulotlarini taqdim etishni maqsad qilgan.",
-  "about_text2": "Bizning asosiy maqsadimiz — har bir mijozga yangi, xavfsiz va sog‘lom go‘sht yetkazib berishdir. Bugungi kunda 1 ta faol filial orqali mijozlarga xizmat ko‘rsatamiz.",
+  "about_text2": "Bizning asosiy maqsadimiz — har bir mijozga yangi, xavfsiz va sog‘lom go‘шт yetkazib berishdir. Bugungi kunda 1 ta faol filial orqali mijozlarga xizmat ko‘rsatamiz.",
   "about_text3": "Har bir mahsulotimiz sifat nazorati ostida tayyorlanadi va muzlatish tizimlarida saqlanadi. Biz uchun mijoz ishonchi eng muhim qadriyatdir.",
   "order_title": "Maxsulot zakaz qilish",
   "order_name": "Ismingiz",
   "order_email": "Email manzilingiz",
   "order_type": "Buyurtma turi",
-  "order_submit": "Yuborish"
+  "order_submit": "Yuborish",
+  "category_beef": "Mol",
+  "category_lamb": "Qo'y",
+  "category_chicken": "Tovuq",
+  "category_horse": "Ot",
+  "category_lahm": "Lahm",
+  "category_file": "Tovuq filesi",
+  "category_qurt": "Qurt",
+
+  "products": {
+    "chicken": {
+      "name": "Tovuq Go'shti",
+      "description": "Yangi tovuq go'shti",
+      "details": {
+        "weight": "1 kg",
+        "origin": "Mahalliy ferma",
+        "storage": "Muzlatgichda saqlang",
+        "benefits": "Protein va vitaminlarga boy"
+      }
+    },
+    "lamb": {
+      "name": "Qo'y Go'shti",
+      "description": "Sifatli qo'y go'shti",
+      "details": {
+        "weight": "1 kg",
+        "origin": "Tog' qo'ylari",
+        "storage": "Muzlatgichda saqlang",
+        "benefits": "B12 vitamin va temirga boy"
+      }
+    },
+    "beef": {
+      "name": "Mol Go'shti",
+      "description": "Sifatli mol go'shti",
+      "details": {
+        "weight": "1 kg",
+        "origin": "Mahalliy chorvachilik",
+        "storage": "Muzlatgichda saqlang",
+        "benefits": "Temir va proteinlarga boy"
+      }
+    }
+  }
 }

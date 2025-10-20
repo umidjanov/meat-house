@@ -59,37 +59,70 @@
         });
     </script>
 
-    <!-- Hero -->
+    <!-- Search -->
     <section class="bg-gradient-to-r from-meat-red to-meat-dark text-white py-12 text-center">
         <div class="container mx-auto px-4">
-            <h2 data-i18n="hero_title" class="text-3xl font-bold mb-3">Sifatli Go'sht Do'koni</h2>
-            <p data-i18n="hero_subtitle" class="text-lg mb-6">Eng yangi va sifatli go'sht mahsulotlari</p>
+            <h2 data-i18n="hero_title" class="text-3xl font-bold mb-3">
+                Sifatli Go'sht Do'koni
+            </h2>
+            <p data-i18n="hero_subtitle" class="text-lg mb-6">
+                Eng yangi va sifatli go'sht mahsulotlari
+            </p>
 
             <div class="bg-white rounded-full p-1 max-w-md mx-auto shadow-lg">
-                <div class="flex">
-                    <input id="searchInput" data-i18n="search_placeholder" type="text"
-                        placeholder="Go'sht turini qidiring..."
-                        class="flex-1 px-4 py-2 rounded-l-full text-gray-700 focus:outline-none" />
-                    <button id="searchBtn"
-                        class="bg-meat-red hover:bg-meat-dark text-white px-6 py-2 rounded-r-full transition-colors">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
+                <input id="searchInput" data-i18n="search_placeholder" type="text"
+                    placeholder="Go'sht turini qidiring..."
+                    class="flex-1 px-4 py-2 rounded-l-full text-gray-700 focus:outline-none" />
+            </div>
+
+            <!-- Categories -->
+            <div id="categories" class="flex flex-wrap justify-center gap-3 mt-6">
+                <button data-i18n="category_beef"
+                    class="category bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-meat-red hover:text-white transition">
+                    Mol
+                </button>
+                <button data-i18n="category_lamb"
+                    class="category bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-meat-red hover:text-white transition">
+                    Qo'y
+                </button>
+                <button data-i18n="category_chicken"
+                    class="category bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-meat-red hover:text-white transition">
+                    Tovuq
+                </button>
+                <button data-i18n="category_horse"
+                    class="category bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-meat-red hover:text-white transition">
+                    Ot
+                </button>
+                <button data-i18n="category_lahm"
+                    class="category bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-meat-red hover:text-white transition">
+                    Lahm
+                </button>
+                <button data-i18n="category_file"
+                    class="category bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-meat-red hover:text-white transition">
+                    Tovuq filesi
+                </button>
+                <button data-i18n="category_qurt"
+                    class="category bg-white text-gray-800 px-5 py-2 rounded-full font-medium hover:bg-meat-red hover:text-white transition">
+                    Qurt
+                </button>
             </div>
         </div>
     </section>
 
+
     <!-- Products -->
     <section class="py-10">
         <div class="container mx-auto px-4">
-            <h3 data-i18n="products_title" class="text-2xl font-bold text-center mb-8 text-gray-800">Bizning
-                Mahsulotlarimiz</h3>
+            <h3 data-i18n="products_title" class="text-2xl font-bold text-center mb-8 text-gray-800">
+                Bizning Mahsulotlarimiz
+            </h3>
             <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             <p id="noResults" data-i18n="no_results" class="text-center text-gray-500 hidden mt-6">
                 Afsuski bizda bunday mahsulot yo'q😔
             </p>
         </div>
     </section>
+
 
     <!-- Modal -->
     <div id="productModal"
@@ -133,8 +166,8 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-8 text-gray-200 mb-6">
-                <a href="#" class="hover:text-white transition-colors" data-i18n="home">Bosh sahifa</a>
-                <a href="#" class="hover:text-white transition-colors" data-i18n="products">Mahsulotlar</a>
+                <a href="./index.html" class="hover:text-white transition-colors" data-i18n="home">Bosh sahifa</a>
+                <a href="./index.html" class="hover:text-white transition-colors" data-i18n="products1">Mahsulotlar</a>
                 <a href="./about.html" class="hover:text-white transition-colors" data-i18n="about">Biz haqimizda</a>
                 <a href="tel:+998974425040"
                     class="hover:text-white transition-colors px-[10px] py-[5px] bg-[#3e25219d] rounded-lg shadow-lg shadow-[#979191b8] animate-pulse">
@@ -214,9 +247,117 @@
     <!-- Products Script -->
     <script>
         const products = [
-            { id: 1, name: "Tovuq Go'shti", category: "tovuq", price: "25,000", image: "media/7e88ea25ee5792e5eb9857088bdefcb1.avif", description: "Yangi tovuq go'shti", details: { weight: "1 kg", origin: "Mahalliy ferma", storage: "Muzlatgichda saqlang", benefits: "Protein va vitaminlarga boy" } },
-            { id: 2, name: "Qoy Go'shti", category: "qoy", price: "85,000", image: "media/c653086bba8566ae5b9c010fc1234331.avif", description: "Sifatli qoy go'shti", details: { weight: "1 kg", origin: "Tog' qo'ylari", storage: "Muzlatgichda saqlang", benefits: "B12 vitamin va temirga boy" } },
-            { id: 3, name: "Mol Go'shti", category: "mol", price: "70,000", image: "media/196553c5e93d55f0bff7625d8ae58244.avif", description: "Sifatli mol go'shti", details: { weight: "1 kg", origin: "Mahalliy chorvachilik", storage: "Muzlatgichda saqlang", benefits: "Temir va proteinlarga boy" } }
+            {
+                id: 1,
+                name: "Tovuq Go'shti",
+                category: "tovuq Курица",
+                price: "25,000",
+                image: "media/7e88ea25ee5792e5eb9857088bdefcb1.avif",
+                description: "Yangi tovuq go'shti",
+                details: {
+                    weight: "1 kg",
+                    origin: "Mahalliy ferma",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "Protein va vitaminlarga boy",
+                },
+            },
+            {
+                id: 2,
+                name: "Qo'y Go'shti",
+                category: "qo'y qoy Баран",
+                price: "85,000",
+                image: "media/c653086bba8566ae5b9c010fc1234331.avif",
+                description: "Sifatli qoy go'shti",
+                details: {
+                    weight: "1 kg",
+                    origin: "Tog' qo'ylari",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "B12 vitamin va temirga boy",
+                },
+            },
+            {
+                id: 3,
+                name: "Mol Go'shti",
+                category: "mol Корова",
+                price: "70,000",
+                image: "media/196553c5e93d55f0bff7625d8ae58244.avif",
+                description: "Sifatli mol go'shti",
+                details: {
+                    weight: "1 kg",
+                    origin: "Mahalliy chorvachilik",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "Temir va proteinlarga boy",
+                },
+            },
+            {
+                id: 4,
+                name: "Ot Go'shti",
+                category: "ot лошадь",
+                price: "120,000",
+                image: "media/otGoshti.avif",
+                description: "Sifatli ot go'shti",
+                details: {
+                    weight: "1 kg",
+                    origin: "Mahalliy chorvachilik",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "Temir va proteinlarga boy",
+                },
+            },
+            {
+                id: 5,
+                name: "Lahm go'shti",
+                category: "lahm постное мясо",
+                price: "120,000",
+                image: "media/molLahim.avif",
+                description: "Sifatli mol lahm go'sht",
+                details: {
+                    weight: "1 kg",
+                    origin: "Mahalliy chorvachilik",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "Temir va proteinlarga boy",
+                },
+            },
+            {
+                id: 6,
+                name: "Lahm go'shti",
+                category: "lahm постное мясо",
+                price: "120,000",
+                image: "media/qoyLahm.avif",
+                description: "Sifatli qo'y lahm go'sht",
+                details: {
+                    weight: "1 kg",
+                    origin: "Mahalliy chorvachilik",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "Temir va proteinlarga boy",
+                },
+            },
+            {
+                id: 7,
+                name: "Tovuq filesi",
+                category: "file Куринный филе",
+                price: "70,000",
+                image: "media/file.jpg",
+                description: "Sifatli tovuq filesi",
+                details: {
+                    weight: "1 kg",
+                    origin: "Mahalliy chorvachilik",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "Temir va proteinlarga boy",
+                },
+            },
+            {
+                id: 8,
+                name: "Mazali qurt",
+                category: "qurt курт",
+                price: "1,000",
+                image: "media/qurt.jpg",
+                description: "Suzmadan qilingan mazali qurt",
+                details: {
+                    origin: "Mahalliy chorvachilik",
+                    storage: "Muzlatgichda saqlang",
+                    benefits: "Temir va proteinlarga boy",
+                },
+            },
         ];
 
         const grid = document.getElementById("productsGrid");
@@ -225,6 +366,8 @@
         const modalTitle = document.getElementById("modalTitle");
         const modalImage = document.getElementById("modalImage");
         const modalContent = document.getElementById("modalContent");
+        const input = document.getElementById("searchInput");
+        const categoryBtns = document.querySelectorAll(".category");
 
         function renderProducts(list) {
             grid.innerHTML = "";
@@ -233,37 +376,52 @@
                 return;
             }
             noResults.classList.add("hidden");
-            list.forEach(p => {
+            list.forEach((p) => {
                 const card = document.createElement("div");
                 card.className = "bg-white rounded-lg shadow hover:shadow-lg transition p-4";
                 card.innerHTML = `
-          <img src="${p.image}" alt="${p.name}" class="w-full h-[450px] object-cover rounded-md mb-3">
-          <h4 class="font-bold text-lg text-gray-800">${p.name}</h4>
-          <p class="text-gray-600 text-sm mb-3">${p.description}</p>
-          <div class="flex justify-between items-center">
-            <span class="text-meat-red font-bold">${p.price} so'm</span>
-            <button class="bg-meat-red hover:bg-meat-dark text-white px-3 py-1 rounded" data-id="${p.id}">
-              <i class="fas fa-eye mr-1"></i>Ko'rish
-            </button>
-          </div>`;
+        <img src="${p.image}" alt="${p.name}" class="w-full h-[450px] object-cover rounded-md mb-3">
+        <h4 class="font-bold text-lg text-gray-800">${p.name}</h4>
+        <p class="text-gray-600 text-sm mb-3">${p.description}</p>
+        <div class="flex justify-between items-center">
+          <span class="text-meat-red font-bold">${p.price} so'm</span>
+          <button class="bg-meat-red hover:bg-meat-dark text-white px-3 py-1 rounded" data-id="${p.id}">
+            <i class="fas fa-eye mr-1"></i>Ko'rish
+          </button>
+        </div>`;
                 grid.appendChild(card);
             });
         }
+
         renderProducts(products);
 
-        document.getElementById("searchBtn").addEventListener("click", search);
-        document.getElementById("searchInput").addEventListener("keypress", e => e.key === "Enter" && search());
+        // Real-time search
+        input.addEventListener("input", search);
+
         function search() {
-            const input = document.getElementById("searchInput").value.trim().toLowerCase();
-            if (input === "") return renderProducts(products);
-            const filtered = products.filter(p => p.name.toLowerCase().includes(input));
+            const query = input.value.trim().toLowerCase();
+            if (query === "") return renderProducts(products);
+            const filtered = products.filter(
+                (p) =>
+                    p.name.toLowerCase().includes(query) ||
+                    p.category.toLowerCase().includes(query)
+            );
             renderProducts(filtered);
         }
 
-        grid.addEventListener("click", e => {
+        // Category click — auto search
+        categoryBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                input.value = btn.textContent.trim();
+                search();
+            });
+        });
+
+        // Modal open
+        grid.addEventListener("click", (e) => {
             const id = e.target.closest("button")?.dataset.id;
             if (!id) return;
-            const p = products.find(x => x.id == id);
+            const p = products.find((x) => x.id == id);
             openModal(p);
         });
 
@@ -271,25 +429,26 @@
             modalTitle.textContent = p.name;
             modalImage.src = p.image;
             modalContent.innerHTML = `
-        <p>${p.description}</p>
-        <div class="bg-gray-50 p-3 rounded-lg">
-          <h5 class="font-semibold mb-2">Mahsulot haqida:</h5>
-          <p><b>Og'irligi:</b> ${p.details.weight}</p>
-          <p><b>Kelib chiqishi:</b> ${p.details.origin}</p>
-          <p><b>Saqlash:</b> ${p.details.storage}</p>
-          <p><b>Foydali xususiyatlari:</b> ${p.details.benefits}</p>
-        </div>
-        <div class="text-center mt-3">
-          <span class="text-2xl font-bold text-meat-red">${p.price} so'm</span>
-        </div>`;
+      <p>${p.description}</p>
+      <div class="bg-gray-50 p-3 rounded-lg">
+        <h5 class="font-semibold mb-2">Mahsulot haqida:</h5>
+        <p><b>Og'irligi:</b> ${p.details.weight}</p>
+        <p><b>Kelib chiqishi:</b> ${p.details.origin}</p>
+        <p><b>Saqlash:</b> ${p.details.storage}</p>
+        <p><b>Foydali xususiyatlari:</b> ${p.details.benefits}</p>
+      </div>
+      <div class="text-center mt-3">
+        <span class="text-2xl font-bold text-meat-red">${p.price} so'm</span>
+      </div>`;
             modal.classList.remove("hidden");
             modal.classList.add("flex");
         }
 
-        document.querySelectorAll("#closeModalBtn, #closeModalBtn2").forEach(btn =>
+        document.querySelectorAll("#closeModalBtn, #closeModalBtn2").forEach((btn) =>
             btn.addEventListener("click", closeModal)
         );
-        modal.addEventListener("click", e => e.target === modal && closeModal());
+        modal.addEventListener("click", (e) => e.target === modal && closeModal());
+
         function closeModal() {
             modal.classList.add("hidden");
             modal.classList.remove("flex");
