@@ -149,6 +149,34 @@
             </div>
         </div>
     </div>
+    <script>
+        const orderBtn = document.querySelector('#productModal [data-i18n="order"]')
+        const productModal = document.getElementById('productModal')
+
+        orderBtn.addEventListener('click', () => {
+            const title = document.getElementById('modalTitle').textContent
+            const image = document.getElementById('modalImage').src
+            const content = document.getElementById('modalContent').innerText
+
+            console.log({ title, image, content })
+
+            // Xabar yaratish
+            const message = document.createElement('div')
+            message.textContent = 'Buyurtma jo‘natildi ✅'
+            message.className =
+                'fixed bottom-6 right-6 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg animate-fade-in z-[9999]'
+            document.body.appendChild(message)
+
+            // 3 soniyadan so‘ng xabarni o‘chirish va modalni yopish
+            setTimeout(() => {
+                message.remove()
+                productModal.classList.add('hidden')
+            }, 3000)
+        })
+    </script>
+
+
+
 
     <!-- Footer -->
     <footer class="bg-gradient-to-r from-meat-dark to-meat-red text-white py-10 mt-16 relative overflow-hidden">
